@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+jinja2
+spacy
+huggingface_hub
+diffusers
+torch
+pydantic
+requests
+transformers
+accelerate

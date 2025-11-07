@@ -1,0 +1,21 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 30px;
+}
+.storyboard {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+.panel {
+    border: 1px solid #ccc;
+    padding: 8px;
+    border-radius: 6px;
+    width: 380px;
+    background: #fafafa;
+    text-align: center;
+}
+.caption {
+    margin-top: 12px;
+    font-size: 1.08em;
+}

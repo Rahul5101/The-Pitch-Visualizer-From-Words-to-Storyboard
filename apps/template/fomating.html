@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pitch Visualizer Storyboard</title>
+    <link rel="stylesheet" href="/static/design.css"/>
+</head>
+<body>
+    <h2>The Pitch Visualizer</h2>
+    <form method="post" action="/generate">
+        <textarea name="input_text" rows="6" cols="60" placeholder="Paste your story here...">{{ input_text or "" }}</textarea><br>
+        <label for="style">Select style:</label>
+        <select name="style">
+          <option value="digital art" {% if style == "digital art" %}selected{% endif %}>Digital Art</option>
+          <option value="photorealistic" {% if style == "photorealistic" %}selected{% endif %}>Photorealistic</option>
+          <option value="cartoon" {% if style == "cartoon" %}selected{% endif %}>Cartoon</option>
+        </select>
+        <button type="submit">Generate Storyboard</button>
+    </form>
+
+    {% if segments %}
+    <hr>
+    <div class="storyboard">
+        {% for caption, img in segments %}
+            <div class="panel">
+                <img src="/{{ img }}" alt="scene image" style="width:350px;"/>
+                <p class="caption">{{ caption }}</p>
+            </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+</body>
+</html>
