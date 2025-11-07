@@ -1,7 +1,6 @@
 from diffusers import StableDiffusionPipeline
 import torch
 
-# Load model once on startup (avoid reloading for each image)
 pipe = StableDiffusionPipeline.from_pretrained(
     "CompVis/stable-diffusion-v1-4", torch_dtype=torch.float16
 ).to("cuda" if torch.cuda.is_available() else "cpu")
